@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { MapProvider } from "./Contexts/MapContext";
-import { Map } from "./Map/Map";
+import { App } from "./App";
+import { ItemProvider } from "./Contexts/ItemContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -10,7 +11,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <MapProvider>
-      <Map />
+      <ItemProvider>
+        <App />
+      </ItemProvider>
     </MapProvider>
   </React.StrictMode>
 );

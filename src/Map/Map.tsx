@@ -12,7 +12,7 @@ export const Map = ({ children }: { children?: ReactNode }) => {
 
   return (
     <div id="map" ref={mapRef}>
-      {/* {children} */}
+      {children}
     </div>
   );
 };
