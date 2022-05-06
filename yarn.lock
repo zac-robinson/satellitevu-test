@@ -2465,11 +2465,6 @@ acorn@^8.2.4, acorn@^8.4.1, acorn@^8.5.0, acorn@^8.7.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.1.tgz#0197122c843d1bf6d0a5e83220a788f278f63c30"
   integrity sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==
 
-add@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
-  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
-
 address@^1.0.1, address@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/address/-/address-1.2.0.tgz#d352a62c92fee90f89a693eccd2a8b2139ab02d9"
@@ -4652,7 +4647,7 @@ geojson-rbush@3.x:
     "@types/geojson" "7946.0.8"
     rbush "^3.0.1"
 
-geotiff@^2.0.2, geotiff@^2.0.5:
+geotiff@^2.0.2:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/geotiff/-/geotiff-2.0.5.tgz#ef94227aba5c1b64167b49c44304b1fea5b01c95"
   integrity sha512-U5kVYm118YAmw2swiLu8rhfrYnDKOFI7VaMjuQwcq6Intuuid9Pyb4jjxYUxxkq8kOu2r7Am0Rmb52PObGp4pQ==
