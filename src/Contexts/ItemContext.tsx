@@ -22,11 +22,21 @@ export const ItemProvider = ({ children }: { children: ReactNode }) => {
       const items = collection.links.filter((link: any) => link.rel === "item");
       const features = await Promise.all(
         items.map(async (item: any) => {
-          const { data: response } = await axios.get(item.href);
-          return response;
+          const { data: feature } = await axios.get(item.href);
+          feature.properties.title = item.title; // title is not available on the individual item href so copy it from the collection item
+          feature.properties.assets = item.assets; // when converting between geoJSON here -> OL for the map -> geojson at the other side assets is being stripped by OL
+          return feature;
         })
       );
 
+      features.forEach(
+        (feature) => (feature.properties.assets = feature.assets) // when converting between geoJSON here -> OL for the map -> geojson at the other side assets is being stripped by OL
+      );
+
+      console.log(
+        "🚀 ~ file: ItemContext.tsx ~ line 36 ~ fetchData ~ features",
+        features
+      );
       setData(featureCollection(features));
     };
 
