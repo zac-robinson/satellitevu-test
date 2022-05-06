@@ -7,7 +7,7 @@ import { useMap } from "./Contexts/MapContext";
 import { Map } from "./Map/Map";
 import { Overlay } from "./Map/Overlay";
 import { ResultsTray } from "./ResultsTray/ResultsTray";
-import { DateTimeSearch } from "./Search/DateTimeSearch";
+// import { DateTimeSearch } from "./Search/DateTimeSearch";
 import { DrawPolygon } from "./Tools/DrawPolygon";
 
 export const App = () => {

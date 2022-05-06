@@ -34,6 +34,8 @@ export const DrawPolygon: React.FC<Props> = ({
   );
 
   useEffect(() => {
+    const draw = drawInteraction.current;
+
     const drawStartHandler = () => {
       const feature = featureSource.getFeatureById("searchPoly");
       feature && featureSource.removeFeature(feature);
@@ -57,18 +59,18 @@ export const DrawPolygon: React.FC<Props> = ({
       setResults(intersectingFeatures);
     };
 
-    drawInteraction.current.on("drawstart", drawStartHandler);
-    drawInteraction.current.on("drawend", drawEndHandler);
-    drawInteraction.current.setActive(isActive);
+    draw.on("drawstart", drawStartHandler);
+    draw.on("drawend", drawEndHandler);
+    draw.setActive(isActive);
 
-    mapObj.addInteraction(drawInteraction.current);
+    mapObj.addInteraction(draw);
 
     return () => {
-      drawInteraction.current.un("drawstart", drawStartHandler);
-      drawInteraction.current.un("drawend", drawEndHandler);
-      mapObj.removeInteraction(drawInteraction.current);
+      draw.un("drawstart", drawStartHandler);
+      draw.un("drawend", drawEndHandler);
+      mapObj.removeInteraction(draw);
     };
-  }, [isActive, mapObj, openResultsTray, setResults]);
+  }, [isActive, mapObj, openResultsTray, setResults, featureSource]);
 
   const clickHandler = () => {
     const feature = featureSource.getFeatureById("searchPoly");
