@@ -21,3 +21,5 @@ To run the tests use `yarn test`.
 - I would also, with more time, expand the testing to better test some of the OpenLayers components. This involces setting upsome fake classes and enabling certain features in jest which would have taken up a significant portion of time. I would have wanted to have test the drawend handler method inside DrawPolygon for example.
 
 - I would want to use Overlays in OpenLayers to have people be able to hover over the map and it display a preview rather than them having to search to see the detail.
+
+- I would have liked to use style-components or emotion or tailwind to remove the need to inline styles throughout the app.

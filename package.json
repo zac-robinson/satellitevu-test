@@ -52,7 +52,7 @@
   },
   "jest": {
     "transformIgnorePatterns": [
-      "node_modules/(?!(ol|mapbox-to-css-font|ol-mapbox-style|@mapbox|rsuite|geotiff|quick-lru)/)"
+      "node_modules/(?!(ol|mapbox-to-css-font|ol-mapbox-style|@mapbox|rsuite|geotiff|quick-lru|flatpickr)/)"
     ]
   }
 }

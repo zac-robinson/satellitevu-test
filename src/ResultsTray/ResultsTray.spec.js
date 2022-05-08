@@ -82,7 +82,6 @@ beforeEach(() => {
 it("should render correctly when there are results", () => {
   render(<ResultsTray {...props} />);
 
-  expect(screen.getByRole("button", { name: "Close" })).toBeInTheDocument();
   expect(
     screen.queryByText("There are no results found")
   ).not.toBeInTheDocument();
@@ -98,7 +97,12 @@ it("should render correctly when there are no results", () => {
 it("should call setOpen when the close button is clicked", () => {
   render(<ResultsTray {...props} />);
 
-  userEvent.click(screen.getByRole("button", { name: "Close" }));
+  const buttons = screen.getAllByRole("button");
+  const closeBtn = buttons.find((btn) =>
+    btn.className.includes("rs-drawer-header-close")
+  );
+
+  userEvent.click(closeBtn);
   expect(props.setOpen).toHaveBeenCalledTimes(1);
   expect(props.setOpen).toHaveBeenCalledWith(false);
 });
