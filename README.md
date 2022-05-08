@@ -8,7 +8,8 @@ To run the tests use `yarn test`.
 
 # If I had more time
 
-If I had more time I would have liked to add UX feedback to show when the button was active to the user and when it was not active. I would have also liked to expand error handling potentially using React Error Boundaries to more gracefully tell the user if some data comes back in a different format than I am expecting.
+If I had more time I would have liked to add UX feedback to show when the button was active to the user and when it was not active. 
+I would have also liked to expand error handling potentially using React Error Boundaries to more gracefully tell the user if some data comes back in a different format than I am expecting.
 Another option I would have liked to explore would have been using React Suspense for more incremental data fetching and to have "loading" UI when the specific parts of the data is being fetched.
 If I had more time I would also liked to have properly plugged the geoTIFF data in openlayers ad had it actually display, however I have never worked with geoTIFF data and didn't want to spend the fairly limited time I had available to just get that to display.
 Another extension to this project I would have added would have been to spend the time and properly type more of the API responses and have less `any`s.
