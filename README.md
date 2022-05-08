@@ -6,7 +6,7 @@ Or if you want to run this project locally use the command `yarn start` after in
 
 To run the tests use `yarn test`.
 
-Parts of this process that I struggled with and took me the most time was the fact that I have never worked with TIFF data and have never used an API that uses STAC. Once I had played around with the API for a little while in Postman though I defintely was able to get a grips on the format and the relations between some of the endpoints.
+# If I had more time
 
 If I had more time I would have liked to add UX feedback to show when the button was active to the user and when it was not active. I would have also liked to expand error handling potentially using React Error Boundaries to more gracefully tell the user if some data comes back in a different format than I am expecting.
 Another option I would have liked to explore would have been using React Suspense for more incremental data fetching and to have "loading" UI when the specific parts of the data is being fetched.
