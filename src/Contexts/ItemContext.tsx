@@ -33,10 +33,6 @@ export const ItemProvider = ({ children }: { children: ReactNode }) => {
         (feature) => (feature.properties.assets = feature.assets) // when converting between geoJSON here -> OL for the map -> geojson at the other side assets is being stripped by OL
       );
 
-      console.log(
-        "🚀 ~ file: ItemContext.tsx ~ line 36 ~ fetchData ~ features",
-        features
-      );
       setData(featureCollection(features));
     };
 
