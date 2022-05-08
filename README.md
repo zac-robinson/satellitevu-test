@@ -1,50 +1,15 @@
 # Satellite Vu Test
 
-This project is hosted here:
+This project is hosted here: <<< ADD NETLIFY LINK>>>
 
-# Getting Started with Create React App
+Or if you want to run this project locally use the command `yarn start` after installing the dependencies.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To run the tests use `yarn test`.
 
-## Available Scripts
+Parts of this process that I struggled with and took me the most time was the fact that I have never worked with TIFF data and have never used an API that uses STAC. Once I had played around with the API for a little while in Postman though I defintely was able to get a grips on the format and the relations between some of the endpoints.
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If I had more time I would have liked to add UX feedback to show when the button was active to the user and when it was not active. I would have also liked to expand error handling potentially using React Error Boundaries to more gracefully tell the user if some data comes back in a different format than I am expecting.
+Another option I would have liked to explore would have been using React Suspense for more incremental data fetching and to have "loading" UI when the specific parts of the data is being fetched.
+If I had more time I would also liked to have properly plugged the geoTIFF data in openlayers ad had it actually display, however I have never worked with geoTIFF data and didn't want to spend the fairly limited time I had available to just get that to display.
+Another extension to this project I would have added would have been to spend the time and properly type more of the API responses and have less `any`s.
+I would also, with more time, expand the testing to better test some of the OpenLayers components. This involces setting upsome fake classes and enabling certain features in jest which would have taken up a significant portion of time. I would have wanted to have test the drawend handler method inside DrawPolygon for example.

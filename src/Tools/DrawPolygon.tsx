@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import ReactTooltip from "react-tooltip";
 import { Draw } from "ol/interaction";
 import { useMap } from "../Contexts/MapContext";
-import { Geometry } from "ol/geom";
+import { Geometry as OLGeometry } from "ol/geom";
 import VectorSource from "ol/source/Vector";
 import { ReactComponent as PencilIcon } from "./pencil.svg";
 import { DrawEvent } from "ol/interaction/Draw";
@@ -24,7 +24,7 @@ export const DrawPolygon: React.FC<Props> = ({
   const featureLayer = mapObj
     .getAllLayers()
     .find((layer) => layer.get("name") === "featureLayer");
-  const featureSource = featureLayer?.getSource() as VectorSource<Geometry>;
+  const featureSource = featureLayer?.getSource() as VectorSource<OLGeometry>;
 
   const drawInteraction = useRef(
     new Draw({
@@ -36,11 +36,6 @@ export const DrawPolygon: React.FC<Props> = ({
   useEffect(() => {
     const draw = drawInteraction.current;
 
-    const drawStartHandler = () => {
-      const feature = featureSource.getFeatureById("searchPoly");
-      feature && featureSource.removeFeature(feature);
-    };
-
     const drawEndHandler = (event: DrawEvent) => {
       setIsActive(false);
       event.feature.setId("searchPoly");
@@ -51,7 +46,7 @@ export const DrawPolygon: React.FC<Props> = ({
       );
 
       const intersectingFeatures = featureCollection.features.filter(
-        (feature: any) => {
+        (feature) => {
           return booleanIntersects(drawnFeature, feature) && feature;
         }
       );
@@ -59,14 +54,12 @@ export const DrawPolygon: React.FC<Props> = ({
       setResults(intersectingFeatures);
     };
 
-    draw.on("drawstart", drawStartHandler);
     draw.on("drawend", drawEndHandler);
     draw.setActive(isActive);
 
     mapObj.addInteraction(draw);
 
     return () => {
-      draw.un("drawstart", drawStartHandler);
       draw.un("drawend", drawEndHandler);
       mapObj.removeInteraction(draw);
     };
