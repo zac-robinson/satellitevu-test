@@ -1,6 +1,6 @@
 # Satellite Vu Test
 
-This project is hosted here: <<< ADD NETLIFY LINK>>>
+This project is hosted here: https://comforting-sorbet-f1de10.netlify.app/
 
 Or if you want to run this project locally use the command `yarn start` after installing the dependencies.
 
