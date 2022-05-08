@@ -8,7 +8,6 @@ import { useMap } from "./Contexts/MapContext";
 import { Map } from "./Map/Map";
 import { Overlay } from "./Map/Overlay";
 import { ResultsTray } from "./ResultsTray";
-// import { DateTimeSearch } from "./Search/DateTimeSearch";
 import { DrawPolygon } from "./Tools/DrawPolygon";
 
 export const App = () => {
@@ -30,16 +29,17 @@ export const App = () => {
   }, [mapObj, items]);
 
   return (
-    <div>
-      <Overlay />
-      <DrawPolygon openResultsTray={setDrawerOpen} setResults={setResults} />
-      <Map />
-      {/* <DateTimeSearch /> */}
+    <>
+      <Map>
+        <Overlay />
+        <DrawPolygon openResultsTray={setDrawerOpen} setResults={setResults} />
+      </Map>
       <ResultsTray
         open={drawerOpen}
         setOpen={setDrawerOpen}
         results={results}
+        setResults={setResults}
       />
-    </div>
+    </>
   );
 };

@@ -8,7 +8,7 @@ To run the tests use `yarn test`.
 
 # If I had more time
 
-- If I had more time I would have liked to add UX feedback to show when the button was active to the user and when it was not active. 
+- If I had more time I would have liked to add UX feedback to show when the button was active to the user and when it was not active.
 
 - I would have also liked to expand error handling potentially using React Error Boundaries to more gracefully tell the user if some data comes back in a different format than I am expecting.
 
@@ -19,3 +19,5 @@ To run the tests use `yarn test`.
 - Another extension to this project I would have added would have been to spend the time and properly type more of the API responses and have less `any`s.
 
 - I would also, with more time, expand the testing to better test some of the OpenLayers components. This involces setting upsome fake classes and enabling certain features in jest which would have taken up a significant portion of time. I would have wanted to have test the drawend handler method inside DrawPolygon for example.
+
+- I would want to use Overlays in OpenLayers to have people be able to hover over the map and it display a preview rather than them having to search to see the detail.

@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const Result: React.FC<Props> = ({ result }) => (
-  <div style={{ display: "flex", flexDirection: "column" }}>
+  <div style={{ display: "flex", flexDirection: "column", padding: "8px" }}>
     <div style={{ display: "flex", justifyContent: "center" }}>
       <img
         src={result.properties?.assets.thumbnail.href}

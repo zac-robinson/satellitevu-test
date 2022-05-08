@@ -1,15 +1,22 @@
 import { Feature, Geometry, Properties } from "@turf/helpers";
-import { Drawer, Button } from "rsuite";
+import { Drawer } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import { Result } from "./Result";
+import { DateTimeSearch } from "./DateTimeSearch/DateTimeSearch";
 
 interface Props {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   results: Feature<Geometry, Properties>[] | undefined;
+  setResults: React.Dispatch<React.SetStateAction<any>>;
 }
 
-export const ResultsTray: React.FC<Props> = ({ open, setOpen, results }) => (
+export const ResultsTray: React.FC<Props> = ({
+  open,
+  setOpen,
+  results,
+  setResults,
+}) => (
   <Drawer
     size={"md"}
     placement={"bottom"}
@@ -18,11 +25,7 @@ export const ResultsTray: React.FC<Props> = ({ open, setOpen, results }) => (
   >
     <Drawer.Header>
       <Drawer.Title>Results</Drawer.Title>
-      <Drawer.Actions>
-        <Button onClick={() => setOpen(false)} appearance="primary">
-          Close
-        </Button>
-      </Drawer.Actions>
+      <DateTimeSearch setResults={setResults} />
     </Drawer.Header>
     <Drawer.Body>
       <div
