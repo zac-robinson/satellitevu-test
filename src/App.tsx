@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { useItems } from "./Contexts/ItemContext";
 import { useMap } from "./Contexts/MapContext";
 import { Map } from "./Map/Map";
-import { Overlay } from "./Map/Overlay";
 import { ResultsTray } from "./ResultsTray";
 import { DrawPolygon } from "./Tools/DrawPolygon";
 
@@ -31,7 +30,6 @@ export const App = () => {
   return (
     <>
       <Map>
-        <Overlay />
         <DrawPolygon openResultsTray={setDrawerOpen} setResults={setResults} />
       </Map>
       <ResultsTray
